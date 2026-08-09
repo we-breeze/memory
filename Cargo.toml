@@ -1,0 +1,38 @@
+[package]
+name = "brz-mem"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Breeze memory allocation, accounting, and in-memory primitives"
+
+[workspace]
+members = []
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Proprietary"
+
+[workspace.dependencies]
+crossbeam-utils = "0.8"
+mimalloc = { version = "0.1.43", default-features = false }
+
+[dependencies]
+crossbeam-utils.workspace = true
+mimalloc.workspace = true
+
+[features]
+default = ["heap-stats"]
+heap-stats = []
+
+# `GlobalAlloc` is an unsafe trait. Unsafe code is allowed only in this package
+# and is isolated behind the safe `BrzMalloc` facade in `src/malloc.rs`.
+[lints.rust]
+unsafe_code = "allow"
+
+[lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
