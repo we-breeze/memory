@@ -1,6 +1,6 @@
 # Breeze Memory
 
-`brz-mem` is the shared Rust memory subsystem for Breeze projects. It currently
+`memory` is the shared Rust memory subsystem for Breeze projects. It currently
 owns the process allocator integration and allocation observability:
 
 - a `mimalloc`-backed global allocator;
@@ -17,16 +17,16 @@ independent consumers or dependency boundaries.
 
 ```toml
 [dependencies]
-brz-mem = { path = "../memory" }
+memory = { git = "https://github.com/we-breeze/memory.git", tag = "v0.0.1" }
 ```
 
 Install the allocator exactly once in a binary:
 
 ```rust,no_run
-brz_mem::install_global_allocator!();
+memory::install_global_allocator!();
 
 fn main() {
-    let heap = brz_mem::heap();
+    let heap = memory::heap();
     println!("{heap:?}");
 }
 ```

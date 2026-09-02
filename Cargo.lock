@@ -3,14 +3,6 @@
 version = 4
 
 [[package]]
-name = "brz-mem"
-version = "0.1.0"
-dependencies = [
- "crossbeam-utils",
- "mimalloc",
-]
-
-[[package]]
 name = "cc"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -39,6 +31,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6a45a52f43e1c16f667ccfe4dd8c85b7f7c204fd5e3bf46c5b0db9a5c3c0b8e9"
 dependencies = [
  "cc",
+]
+
+[[package]]
+name = "memory"
+version = "0.1.0"
+dependencies = [
+ "crossbeam-utils",
+ "mimalloc",
 ]
 
 [[package]]
