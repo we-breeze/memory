@@ -17,7 +17,7 @@ independent consumers or dependency boundaries.
 
 ```toml
 [dependencies]
-memory = { git = "https://github.com/we-breeze/memory.git", tag = "v0.0.1" }
+memory = { package = "brz-memory", version = "0.0.2" }
 ```
 
 Install the allocator exactly once in a binary:
@@ -50,3 +50,13 @@ cargo check --no-default-features
 This repository owns allocation, layout, reuse, and memory-lifecycle
 primitives. Business caches and ordinary collections do not belong here merely
 because their data resides in memory.
+
+## Releases
+
+CI runs formatting, Clippy, and tests. To publish, open **Actions → Publish → Run workflow** on `main`. Leave `retry_tag` empty to allocate the next `v0.0.x` tag. The workflow validates the code, commits the version, pushes the commit and tag atomically, and publishes to crates.io using the organization secret `CARGO_REGISTRY_TOKEN`.
+
+If publication fails after the tag was pushed, rerun with that existing tag in `retry_tag`. A normal push or pull request does not publish. Historical tags retain their original version numbers; use new release tags for registry packages.
+
+## License
+
+Licensed under either [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
