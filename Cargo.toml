@@ -4,7 +4,7 @@ edition.workspace = true
 description = "Breeze memory allocation, accounting, and in-memory primitives"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/we-breeze/memory"
-version = "0.1.0"
+version = "0.0.2"
 
 [workspace]
 members = []
