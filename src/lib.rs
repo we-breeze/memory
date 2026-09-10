@@ -8,7 +8,7 @@
 //! Install the allocator once from a binary crate:
 //!
 //! ```no_run
-//! memory::install_global_allocator!();
+//! brz_memory::install_global_allocator!();
 //! ```
 
 mod malloc;

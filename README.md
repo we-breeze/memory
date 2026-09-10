@@ -17,16 +17,16 @@ independent consumers or dependency boundaries.
 
 ```toml
 [dependencies]
-memory = { package = "brz-memory", version = "0.0.2" }
+brz-memory = "0.0.2"
 ```
 
 Install the allocator exactly once in a binary:
 
 ```rust,no_run
-memory::install_global_allocator!();
+brz_memory::install_global_allocator!();
 
 fn main() {
-    let heap = memory::heap();
+    let heap = brz_memory::heap();
     println!("{heap:?}");
 }
 ```
@@ -60,3 +60,14 @@ If publication fails after the tag was pushed, rerun with that existing tag in `
 ## License
 
 Licensed under either [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
+
+## Crate naming
+
+The package name is `brz-memory`; the Rust library name is `brz_memory`.
+Use `brz_memory::...` in Rust code. This replaces the previous `memory`
+library name. Existing explicit dependency aliases remain supported.
+
+```toml
+[dependencies]
+brz-memory = "0.0.2"
+```

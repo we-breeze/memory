@@ -39,4 +39,4 @@ module_name_repetitions = "allow"
 must_use_candidate = "allow"
 
 [lib]
-name = "memory"
+name = "brz_memory"
