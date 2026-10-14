@@ -17,7 +17,7 @@ independent consumers or dependency boundaries.
 
 ```toml
 [dependencies]
-brz-memory = "0.0.2"
+brz-memory = "0.0.3"
 ```
 
 Install the allocator exactly once in a binary:
@@ -69,5 +69,5 @@ library name. Existing explicit dependency aliases remain supported.
 
 ```toml
 [dependencies]
-brz-memory = "0.0.2"
+brz-memory = "0.0.3"
 ```
